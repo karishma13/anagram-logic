@@ -1,0 +1,39 @@
+In C/C++
+
+#include<std.io>
+#define total_char 256
+
+
+
+bool anagram(char *s1,char *s2)
+{
+int count[total_char]={0};
+int i;
+for(i=0; s1[i]&&s2[i] ;i++)
+{
+    count[s1[i]]++;
+    count[s2[i]]--;
+ }
+ 
+       if(s1[i] || s2[i])
+       return false;      //if they aren't of the same same length then false is returned
+ 
+           for(j=0;j<total_char;j++)
+           if(count[i])
+           return false;
+           else
+           return true;
+ }
+ 
+ //Driver program to test
+int main()
+{
+    char s1[] = "silent";
+    char s2[] = "listen";
+    if ( anagram(s1, s2) )
+      printf("The two strings are anagram of each other");
+    else
+      printf("The two strings are not anagram of each other");
+ 
+    return 0;
+}
